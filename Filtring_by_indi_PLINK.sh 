@@ -1,0 +1,14 @@
+#!/bin/bash
+
+VARIAVEL1="LWK.text ESN.text YRI.text MSL.text GWD.text ACB.text ASW.text CLM.text MXL.text PUR.text PEL.text TSI.text IBS.text GBR.text CEU.text FIN.text PJL.text GIH.text ITU.text STU.text BEB.text CDX.text KHV.text CHS.text CHB.text JPT.text"
+
+VARIAVEL2=("bialleliconly_lwk" "bialleliconly_esn" "bialleliconly_yri" "bialleliconly_msl" "bialleliconly_gwd" "bialleliconly_acb" "bialleliconly_asw" "bialleliconly_clm" "bialleliconly_mxl" "bialleliconly_pur" "bialleliconly_pel" "bialleliconly_tsi" "bialleliconly_ibs" "bialleliconly_gbr" "bialleliconly_ceu" "bialleliconly_fin" "bialleliconly_pjl" "bialleliconly_gih" "bialleliconly_itu" "bialleliconly_stu" "bialleliconly_beb" "bialleliconly_cdx" "bialleliconly_khv" "bialleliconly_chs" "bialleliconly_chb" "bialleliconly_jpt")
+
+for i in $VARIAVEL1
+do
+
+     plink --bed bialleliconly.bed --bim bialleliconly.bim --fam bialleliconly.fam --keep-fam "$i" --threads 2 --make-bed --out "${VARIAVEL2[index]}"
+
+     index=$((index+1))
+
+done
