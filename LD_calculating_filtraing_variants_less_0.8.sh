@@ -11,7 +11,7 @@ do
     
     awk '$7 < 0.8 {print $6}' "${VARIAVEL2[i]}_temp.ld" > "${VARIAVEL2[i]}_3_2.txt"
     
-    awk '1' "${VARIAVEL2[i]}_3_1.txt" "${VARIAVEL2[i]}_3_2.txt" > "${VARIAVEL2[i]}_4t.txt"
+    awk '1' "${VARIAVEL2[i]}_3_1.txt" "${VARIAVEL2[i]}_3_2.txt" > "${VARIAVEL2[i]}_4.txt"
     
     awk '!seen[$0]++' "${VARIAVEL2[i]}_4.txt" > "${VARIAVEL2[i]}_5.txt"
     
