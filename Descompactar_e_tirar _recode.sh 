@@ -1,0 +1,12 @@
+# Como retirar .recode do vcf 
+
+ bgzip -c arquivo.recode.vcf > arquivo.vcf.gz
+
+# como retirar o gz do vcf 
+
+ gzip -d arquivo.vcf.gz 
+
+
+# filtrar vcf pela posição 
+
+ time nohup --vcf arquivo.vcf --chr 10  --from-bp 96443486 --to-bp 96495947 --recode --out novo_arquivo_filtrado
